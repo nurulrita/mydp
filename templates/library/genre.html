@@ -1,0 +1,22 @@
+{% extends 'library/base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ genre_name }}{% endblock %}
+
+{% block body_block %}
+    <h1>{{ genre_name }}</h1>
+    {% if genre %}
+        {% if books %}
+        <ul>
+                {% for buku in books %}
+                <li><a href="/library/book/{{ genre.slug }}/{{buku.slug}}">{{ buku.title }}</a></li>
+                {% endfor %}
+                </ul>
+        {% else %}
+                <strong>No pages currently in genre.</strong>
+        {% endif %}
+
+    {% endif %}
+
+{% endblock %}

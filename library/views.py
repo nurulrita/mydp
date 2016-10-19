@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
-from .models import Category
+from .models import Genre
 from .models import Page, Book
 #from .forms import CategoryForm
 #from .forms import PageForm
@@ -9,39 +9,39 @@ from .models import Page, Book
 
 def index(request):
 
-    category_list = Category.objects.order_by('name')[:5]
-    context_dict = {'categories': category_list}
+    genre_list = Genre.objects.order_by('name')[:5]
+    context_dict = {'genres': genre_list}
 
     return render(request, 'library/index.html', context_dict)
 
-def category(request, category_name_slug):
+def genre(request, genre_name_slug):
 
     context_dict = {}
 
     try:
-        category = Category.objects.get(slug=category_name_slug)
-        context_dict['category_name'] = category.name
+        genre = Genre.objects.get(slug=genre_name_slug)
+        context_dict['genre_name'] = genre.name
 
 
-        books = Book.objects.filter(category=category)
+        books = Book.objects.filter(genre=genre)
 
 
         context_dict['books'] = books
-        context_dict['category'] = category
+        context_dict['genre'] = genre
     
-    except Category.DoesNotExist:
+    except Genre.DoesNotExist:
 
         pass
 
-    return render(request, 'library/category.html', context_dict)
+    return render(request, 'library/genre.html', context_dict)
 
 
-def book(request, category_name_slug, book_title):
+def book(request, genre_name_slug, book_slug):
     context_dict = {}
     try:
-        category = Category.objects.get(slug=category_name_slug)
-        book = Book.objects.get(category=category, slug=book_title)
-        context_dict['book_title'] = book_title
+        genre = Genre.objects.get(slug=genre_name_slug)
+        book = Book.objects.get(genre=genre, slug=book_slug)
+        context_dict['book_slug'] = book_slug
         context_dict['book'] = book
     except Book.DoesNotExist:
 	    pass

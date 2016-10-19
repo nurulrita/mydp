@@ -11,14 +11,14 @@
 
 	<!-- <img src="{% static 'images/siberian-cat.jpg'%}" alt="Picture" height="450" width="700" /> -->
     
-        {% if categories %}
+        {% if genres %}
             <ul>
-                {% for category in categories %}
-                    <li><a href="{% url 'category'  category.slug %}">{{ category.name }}</a></li>
+                {% for genre in genres %}
+                    <li><a href="{% url 'genre'  genre.slug %}">{{ genre.name }}</a></li>
                 {% endfor %}
             </ul>
 	{% else %}
-	    <strong>There are no categories present.</strong>
+	    <strong>There are no genres present.</strong>
         {% endif %}
 
         
