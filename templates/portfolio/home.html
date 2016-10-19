@@ -1,0 +1,16 @@
+<h1>Nuthanu</h1>
+<p>Hoi Hoi, welcome to the wonderland</p>
+<ul>
+        <li>name : Nurul</li>
+        <li>age  : 21 yo</li>
+</ul>
+<h2>My Portfolio</h2>
+{% for portfolio in portfolios %}
+    <h3>
+         <a href="{{portfolio.slug}}">
+                 {{portfolio.title}}
+         </a>
+    </h3>
+    <p>{{portfolio.description}}</p>
+    <img scr="{{portfolio.image.url}}"/>
+{% endfor %}

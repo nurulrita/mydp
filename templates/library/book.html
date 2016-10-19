@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Cat</title>
+    </head>
+
+    <body>
+	<h1>{{book_title}}</h1>
+
+	{% if book %}
+	    <ul>
+			<img src ="{{book.image.url}}">
+			{% if book.image %}
+			<li> Title: {{book.title}}</li>
+			<li> Author: {{book.author}}<br></li>
+			<li> Category: {{book.category}}<br></li>
+			<li> Sinopsis: {{book.sinopsis}}</li>
+
+			{% endif %}
+		</li>
+	    </ul>
+	{% else %}
+	The spesific book {{book_title}} doesn't exist
+	{% endif %}
+
+    </body>
+
+</html>
