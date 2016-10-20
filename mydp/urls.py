@@ -32,6 +32,7 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^polls/', include('polls.urls')),
     url(r'^library/', include('library.urls')),
+    url(r'^galery/', include('galery.urls')),
 ]
 
 

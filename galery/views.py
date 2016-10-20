@@ -1,3 +1,7 @@
 from django.shortcuts import render
+from .models import Galery
 
-# Create your views here.
+def galery(request):
+	galeries = Galery.objects.all()
+	return render(request, 'galery/galery.html',
+                 {'galeries': galeries})
