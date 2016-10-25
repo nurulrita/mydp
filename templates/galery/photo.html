@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>{{photo.title}}</title>
+    </head>
+
+    <body>
+	<h1>{{photo.title}}</h1>
+
+	{% if photo %}
+	    <ul>
+			<img src ="{{photo.image.url}}">
+			{% if photo.image %}
+			<li> Title: {{photo.title}}</li>
+			<li> Photo: {{photo.category}}<br></li>
+
+			{% endif %}
+		</li>
+	    </ul>
+	{% else %}
+	The spesific photo {{photo_title}} doesn't exist
+	{% endif %}
+
+    </body>
+
+</html>

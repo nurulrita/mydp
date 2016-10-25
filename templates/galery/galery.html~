@@ -4,7 +4,7 @@
 <h2>My Galery</h2>
 {% for galery in galeries %}
     <h3>
-         <li><a href="{% url 'galery:photo' galery.category.slug galery.slug %}">{{ galery.title}}</a></li>
+         <li><a href="{% url 'galery:photo'  galery.slug %}">{{ galery.title}}</a></li>
              
     </h3>
     <p>{{galery.description}}</p>

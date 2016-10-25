@@ -32,10 +32,10 @@ def photo(request, category_name_slug, photo_slug):
     context_dict = {}
     try:
         category = Category.objects.get(slug=category_name_slug)
-        photo = Galery.objects.get(category=category, slug=photo_slug)
+        photo = Gallery.objects.get(category=category, slug=photo_slug)
         context_dict['photo_slug'] = photo_slug
         context_dict['photo'] = photo
-    except Galery.DoesNotExist:
+    except Gallery.DoesNotExist:
 	    pass
     return render(request, 'galery/photo.html', context_dict)
     
