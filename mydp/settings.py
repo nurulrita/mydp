@@ -43,6 +43,9 @@ INSTALLED_APPS = [
     'galery',
     'todo',
     'library',
+    
+    # third party
+    'crispy_forms',
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -112,7 +115,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Bangkok'
 
 USE_I18N = True
 

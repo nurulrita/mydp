@@ -29,10 +29,11 @@ urlpatterns = [
     url(r'^$', home_view),
     url(r'^accounts/login/$', views.login, name='login'),
     url(r'^accounts/logout/$', views.logout, name='logout', kwargs={'next_page': '/'}),
-    url(r'^blog/', include('blog.urls')),
-    url(r'^polls/', include('polls.urls')),
-    url(r'^library/', include('library.urls')),
-    url(r'^galery/', include('galery.urls')),
+    url(r'^blog/', include('blog.urls', namespace='blog')),
+    url(r'^polls/', include('polls.urls', namespace='polls')),
+    url(r'^library/', include('library.urls', namespace='library')),
+    url(r'^galery/', include('galery.urls', namespace='galery')),
+    url(r'^todo/', include('todo.urls', namespace='todo')),
 ]
 
 
