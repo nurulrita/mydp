@@ -5,5 +5,8 @@ from .models import Galery, Category
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug':('name',)}
     
-admin.site.register(Galery)
+class GaleryAdmin(admin.ModelAdmin):
+    prepopulated_fields = {'slug':('title',)}
+    
+admin.site.register(Galery, GaleryAdmin)
 admin.site.register(Category, CategoryAdmin)

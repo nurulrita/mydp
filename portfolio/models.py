@@ -6,6 +6,7 @@ class Portfolio(models.Model):
 	title = models.CharField(max_length=32)
 	description = models.TextField()
 	image = models.ImageField()
+	url = models.CharField(null=True, blank=True, max_length=100)
 	slug = models.SlugField()
 	
 	def save(self, *args, **kwargs):
