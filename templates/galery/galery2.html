@@ -1,0 +1,12 @@
+<h1>Nuthanu</h1>
+<p>Hoi Hoi, welcome to the wonderland</p>
+
+<h2>My Galery</h2>
+{% for galery in galeries %}
+    <h3>
+         <li><a href="{% url 'galery:photo' galery.category.slug galery.slug %}">{{ galery.title}}</a></li>
+             
+    </h3>
+    <p>{{galery.description}}</p>
+    <img scr="{{galery.image.url}}"/>
+{% endfor %}
