@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-    <head>
-	<title>{{photo.title}}</title>
-    </head>
+{% extends 'galery/base.html' %}
 
-    <body>
-	<h1>{{photo.title}}</h1>
+{% block title_main %}{{photo.title}}{% endblock title_main %}
 
-	{% if photo %}
+{% block body_block %}
+  	{% if photo %}
 	    <ul>
-			<img src ="{{photo.image.url}}" height= 500 width=600>
+			<img src ="{{photo.image.url}}" height= 500 width=700>
 			{% if photo.image %}
 			<li> Title: {{photo.title}}</li>
 			<li> Photo: {{photo.category}}<br></li>
@@ -17,10 +13,7 @@
 			{% endif %}
 		</li>
 	    </ul>
-	{% else %}
-	The spesific photo {{photo_title}} doesn't exist
-	{% endif %}
-
-    </body>
-
-</html>
+		{% else %}
+		The spesific photo {{photo_title}} doesn't exist
+		{% endif %}
+{% endblock %}

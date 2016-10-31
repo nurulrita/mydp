@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 {% load staticfiles %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -10,7 +10,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>{% block head_title %}{% endblock head_title %}</title>
+    <title>Gallery</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
@@ -67,25 +67,38 @@
         <div class="row">
 
             <div class="col-lg-12">
+                <h1 class="page-header">Welcome to Nuthanu Gallery</h1>
             </div>
-
-         {% if kategories %}
-            <ul class='nav nav-pills'>
-                {% for kategori in kategories %}
-                    <li><a href="{% url 'galery:category'  kategori.slug %}">{{ kategori.name }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
             
+        {% if category %}
+        
+            {% for c in categories %}
+				<li><a href="{% url 'galery:category' c.slug %}">{{ c.name}}</a></li>
+   
+            {% endfor %}
+            
+        {% else %}
+			<strong>There are no categories present.</strong>
+        {% endif %}
+        
+        <!-- <a href="{% url 'galery:galery' %}"><h3><b>View All Photos</b></h3></a> -->
+            
+        <!--    {% for galery in galeries %}
+            <div class="col-lg-3 col-md-4 col-xs-6 thumb thumbSlides">
+				<a class="thumbnail" href="{% url 'galery:photo' galery.category.slug galery.slug %}">
+						<img class="img-responsive" src="{{galery.image.url}}" alt="">
+					</a>
+                </a>
+            </div>
+            {% endfor %} -->
         </div>
-	    {% block body_block %}
-	    {% endblock body_block %}
+    
 
         <!-- Footer -->
         <footer>
             <div class="row">
                 <div class="col-lg-12">
-                    <p>Copyright &copy; Nuthanu 2016</p>
+                    <p>Copyright &copy; Your Website 2014</p>
                 </div>
             </div>
         </footer>

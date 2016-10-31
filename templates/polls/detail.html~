@@ -13,7 +13,7 @@
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
     <img src="{{ choice.image.url }}" width="150" height="150"><br />
 {% endfor %}
-<br><input type="submit" value="Vote" /></br>
+<input type="submit" value="Vote" />
 </form>
 {% endblock %}
 

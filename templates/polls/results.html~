@@ -1,7 +1,3 @@
-{% extends 'galery/base.html' %}
-{% block head_title %}Polls{% endblock head_title %}
-{% block body_block %}
-
 <h1>{{ question.question_text }}</h1>
 
 <ul>
@@ -11,4 +7,3 @@
 </ul>
 
 <a href="{% url 'polls:detail' question.id %}">Vote again?</a>
-{% endblock %}

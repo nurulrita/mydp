@@ -3,9 +3,11 @@ from .models import Galery
 from .models import Category
 
 def galery(request):
-	galeries = Galery.objects.all()
-	return render(request, 'galery/galery.html',
-                 {'galeries': galeries})
+    galeries = Galery.objects.all()
+    kategori_list = Category.objects.order_by('name')
+    context_dict = {'kategories': kategori_list, 'galeries': galeries}
+    return render(request, 'galery/galery.html', context_dict)
+
 
 def category(request, category_name_slug):
 
@@ -14,13 +16,9 @@ def category(request, category_name_slug):
     try:
         category = Category.objects.get(slug=category_name_slug)
         context_dict['category_name'] = category.name
-
-
         galeries = Galery.objects.filter(category=category)
-
-
         context_dict['galeries'] = galeries
-        context_dict['category'] = category
+        context_dict['categories'] = category
     
     except Galery.DoesNotExist:
 

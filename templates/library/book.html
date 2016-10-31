@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+{% extends 'galery/base.html' %}
+{% block head_title %}Library{% endblock head_title %}
+{% block body_block %}
+
+
 <html>
     <head>
 	<title>{{book.title}}</title>
@@ -26,3 +30,4 @@
     </body>
 
 </html>
+{% endblock %}
