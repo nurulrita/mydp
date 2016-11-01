@@ -62,6 +62,7 @@
                 {% for kategori in kategories %}
                     <li><a href="{% url 'galery:category'  kategori.slug %}">{{ kategori.name }}</a></li>
                 {% endfor %}
+                <hr>
                 <br>
                 <br>
                 <hr>
