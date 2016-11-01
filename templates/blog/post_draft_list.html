@@ -1,6 +1,8 @@
 {% extends 'galery/base.html' %}
 
-{% block content %}
+<title>{% block head_title %}Blog{% endblock head_title %}</title>
+
+{% block body_block %}
     {% for post in posts %}
         <div class="post">
             <p class="date">created: {{ post.created_date|date:'d-m-Y' }}</p>
