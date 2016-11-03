@@ -5,10 +5,25 @@
 {% block body_block %}
   	{% if photo %}
 	    <ul>
-			<img src ="{{photo.image.url}}" height= 500 width=700>
+			<img src ="{{photo.image.url}}" height= 500 width=700> </br>
 			{% if photo.image %}
-			<li> Title: {{photo.title}}</li>
-			<li> Photo: {{photo.category}}<br></li>
+			</br>
+
+			<table id="datatable" class="table table-hover">
+					  <tbody>
+						  <tr>
+							  <th>Title</th>
+							  <td>{{ photo.title }}</td>
+						  </tr>
+						  
+						  <tr>
+							  <td><b>Category</b></td>
+							  <td>{{ photo.category }}</td>
+						  </tr>
+						  
+						  
+					  </tbody>
+				  </table>
 
 			{% endif %}
 		</li>
