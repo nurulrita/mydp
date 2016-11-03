@@ -1,19 +1,19 @@
 {% extends 'galery/base.html' %}
-{% block app_name %}gallery{% endblock app_name %}
+
 <title>{% block head_title %}Gallery{% endblock head_title %}</title>
 
 {% block body_block %}
 
-       <div class="row">
        {% for galery in galeries %}
-	        <div class="col-md-4">
+	        <div class="col-sm-4 col-md-4">
 	            <a class="thumbnail" href="{% url 'galery:photo' galery.category.slug galery.slug %}">
-	                <img class="img-responsive" src="{{galery.image.url}}" alt="">
+	                <img class="img-responsive" style="width:380px; height:285px;" src="{{galery.image.url}}" alt="">
 	            </a>
 	            <!-- <p>{{ galery.title }}</p>
 	            <p><a href="{% url 'galery:photo' galery.category.slug galery.slug %}">{{ galery.category}}</a></p> -->
 	        </div>
+
+	      
 	    {% endfor %}    
-	    </div>
-        
+
 {% endblock %}

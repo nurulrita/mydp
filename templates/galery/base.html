@@ -54,9 +54,6 @@
 
         <div class="row">
 
-            <div class="col-lg-12">
-            </div>
-
          {% if kategories %}
             <ul class='nav nav-pills'>
                 {% for kategori in kategories %}
@@ -69,11 +66,11 @@
         {% endif %}
             
         </div>
-	    {% block body_block %}
-	    {% endblock body_block %}
+        {% block body_block %}
+        {% endblock body_block %}
 
         <!-- Footer -->
-        <footer>
+       ` <footer>
             <div class="row">
                 <div class="col-lg-12">
                     <p>Copyright &copy; Nuthanu 2016</p>
@@ -88,7 +85,7 @@
     <script src="{% static 'js/jquery.js'%}"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'js/jquery.js'%}js/bootstrap.min.js"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
     {% block script_extra %} 
     {% endblock script_extra %} 
 

@@ -11,7 +11,7 @@
                 {% for photo in galeries %}
                     <div class="col-lg-3 col-md-4 col-xs-6 thumb thumbSlides">
                         <a class="thumbnail" href="{% url 'galery:photo' photo.category.slug photo.slug %}">
-                                <img class="img-responsive" src="{{photo.image.url}}" alt="">
+                                <img class="img-responsive" style="width:260px; height: 180px;" src="{{photo.image.url}}" alt="">
                         </a>
                         <p>{{ photo.title }}</p>
                     </div>
