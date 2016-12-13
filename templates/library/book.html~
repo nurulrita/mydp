@@ -10,6 +10,7 @@
 
     <body>
 	<h1>{{book.title}}</h1>
+	<hr>
 
 	{% if book %}
 	    <ul>

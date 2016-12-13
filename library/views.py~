@@ -3,6 +3,9 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from .models import Genre
 from .models import Page, Book
+#from .forms import CategoryForm
+#from .forms import PageForm
+#from .forms import BookForm
 
 def index(request):
 

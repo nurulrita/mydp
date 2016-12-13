@@ -14,12 +14,26 @@
 
 	{% if book %}
 	    <ul>
-			<img src ="{{book.image.url}}">
+			<img src ="{{book.image.url}}" "height: 300px" style="width: 300px">
 			{% if book.image %}
-			<li> Title: {{book.title}}</li>
-			<li> Author: {{book.author}}<br></li>
-			<li> Genre: {{book.genre}}<br></li>
-			<li> Sinopsis: {{book.sinopsis}}</li>
+			<table id="datatable" class="table table-hover">
+						  <tr>
+							  <td><b>Author</b></td>
+							  <td>{{book.author}}</td>
+						  </tr>
+						  
+						  <tr>
+							  <td><b>Genre</b></td>
+							  <td>{{book.genre}}</td>
+						  </tr>
+
+						  <tr>
+							  <td><b>Sinopsis</b></td>
+							  <td>{{book.sinopsis}}</td>
+						  </tr>
+						  
+					  </tbody>
+			</table>
 
 			{% endif %}
 		</li>
